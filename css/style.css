@@ -1,4 +1,4 @@
-/* color de menu en active = #000316 */
+/* color de menu en active = #000316 este color ahora en rgba rgba(7, 8, 12, .6) */
 body{
     margin: 0;
 }
@@ -18,12 +18,14 @@ ul{
     color: #a2a2ab;
     display: flex;
     align-items: center;
-    padding: 0px 80px;
+    /* padding: 0px 80px; */
+    margin: 0px 80px;
     text-transform: uppercase;
 }
  .header a.active{ 
     color: #000316;
-    text-decoration-line: underline;
+    border-bottom: 2px solid;
+    /* text-decoration-line: underline; */
 } 
 /* .header li:active {
     color: #000316;
@@ -70,9 +72,9 @@ ul{
     padding-left: 140px;
     line-height: 1.5;
     font-size: 20px;
-    border: 1px solid red;
+    /* border: 1px solid red; */
     background-color: #07080c;
-    background: linear-gradient(90deg, #07080c 60%,rgba(7, 8, 12, .6));
+    background: linear-gradient(90deg, #07080c 60%, rgba(255,254,254,.1));
 }
 .front-cover-description p{
 }
