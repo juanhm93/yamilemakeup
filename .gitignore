@@ -1,2 +1,9 @@
 image/*.png
 image/*.jpg
+css/font/*.scss
+css/font/*.css
+css/font/*.html
+css/font/*.svg
+css/font/*.ttf
+css/font/*.woff
+css/font/*.eot
