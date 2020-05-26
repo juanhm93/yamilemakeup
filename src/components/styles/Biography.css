@@ -1,0 +1,87 @@
+/* SECCION BIOGRAFIA */
+.biography{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px 0px 200px 100px;
+    /* padding-left: 100px; */
+    
+}
+.biography-detail{
+    width: 35%;
+    color: #8f8b87;
+   
+}
+.biography-detail h1{
+    font-size: 50px;
+    color: #484848;
+    /* padding-top: 50px;  */
+    font-family: 'Tenor-Sans';
+    font-weight: initial;
+}
+.biography-detail article p{
+    line-height: 1.5;
+    font-size: 12px;
+    margin: 30px 0px;
+    font-family: 'Public-Sans';
+}
+.link{
+    /* display: block; */
+    padding: 10px 70px;
+    border: 1px solid black;
+    border-radius: 25px;
+    background: #0f0e14;
+    color: white;
+    text-decoration: none;
+    font-size: 25px;
+    text-transform: capitalize;
+    font-family: 'Segoe';
+}
+.biography-images-container{
+    width: 65%;
+    display: flex;
+    flex-wrap: wrap;
+    /* align-items: center; */
+    justify-content: flex-end;
+    font-size: 13px;
+}
+.biography-images-container p span{
+    border-bottom: 1px solid #07080c;
+}
+.miss-image img{
+    max-width: 328px;
+    max-height: 614px;
+    margin-right: -13px;
+}
+.miss-image p{
+    font-family: 'Segoe';
+    padding-left: 5px;
+}
+.ceo-image img{
+    padding-top:120px;
+    margin-right: -12px;
+    max-width: 450px;
+    max-height: 520px;
+    object-fit: cover;
+}
+.ceo-image p{
+    padding-left: 190px;
+    font-family: 'Segoe';
+}
+.actress-image img{
+    width: 330px;
+    height: 389px;
+    margin-right: 100px;
+    margin-top: -129px;
+}
+.actress-image p{
+    font-family: 'Public-Sans';
+    padding-left: 5px;
+}
+.biography-line{
+    width: 20%;
+    height: 15px;
+    background-color: #0f0e14;
+    margin: 0;
+    margin-top: 110px;
+}

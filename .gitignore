@@ -21,3 +21,13 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+public/images/*.png
+public/images/*.jpg
+public/images/*.svg
+/src/assets/static/*.png
+/src/assets/static/*.jpg
+/src/assets/static/*.svg
+/src/assets/static/fonts/*.otf
+/src/assets/static/fonts/*.ttf
+/src/assets/static/fonts/*.woff

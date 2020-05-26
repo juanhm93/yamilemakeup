@@ -1,38 +1,58 @@
-.App {
-  text-align: center;
+/* color de menu en active = #000316 este color ahora en rgba rgba(7, 8, 12, .6) */
+/* #0C0E14 verdadero color negro */
+@font-face {
+  font-family: 'Segoe-Bold';
+  src: local("Segoe UI Bold"),
+  local("Segoe-UI-Bold"),
+  url('./assets/static/fonts/Segoe\ UI\ Bold.woff');
+  font-weight: bold;
+}
+@font-face {
+  font-family: 'Segoe';
+  src: local("Segoe UI"),
+  local("Segoe-UI"),
+  url('./assets/static/fonts/Segoe\ UI.woff');
+  font-weight: normal;
+}
+@font-face {
+  font-family: 'Tenor-Sans';
+  src: local("Tenor Sans Regular"),
+  local("Tenor-sans-Regular"),
+  url('./assets/static/fonts/TenorSans-Regular.ttf');
+  font-weight: normal;
+}
+@font-face {
+  font-family: 'Public-Sans';
+  src: local("Public Sans Regular"),
+  local("Public-sans-Regular"),
+  url('./assets/static/fonts/PublicSans-Regular.ttf');
+  font-weight: normal;
+}
+@font-face {
+  font-family: 'Cirka-Bold';
+  src: local("Circa bold"),
+  local("Circa-bold"),
+  url('./assets/static/fonts/Cirka\ Bold\ 700.otf');
+  font-weight: normal;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body{
+  margin: 0;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+ol,
+ul{
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+  margin: 0;
 }
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+p{
+  margin: 0;
 }

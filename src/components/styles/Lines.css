@@ -1,0 +1,14 @@
+/* SECCION DE LA LINEA */
+.line-course{
+    /* display: inline-block; */
+    width:43%;
+    height: 3px;
+    background-color: #838383;
+}
+.l-left{
+    /* padding-top: 10px; */
+    margin-left: 50px;
+}
+.l-right{
+    margin-right: 50px;
+}
