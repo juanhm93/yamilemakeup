@@ -32,10 +32,24 @@ class Course extends React.Component{
     }
 
     render(){
+
+    // hecho a lo bruto obviamente no validado y como lo tenian en un principio
         let myStyle = {};
         if(this.state.indice === 1){
             myStyle = {
                 left: '-700px'
+            }
+        }else{
+            if(this.state.indice > 1){
+                myStyle = {
+                    left: '-1250px'
+                }
+            }else{
+                if(this.state.indice < 1 ){
+                    myStyle = {
+                        left: '-150px'
+                    }
+                }
             }
         }
         return(
