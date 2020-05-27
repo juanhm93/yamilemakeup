@@ -10,11 +10,7 @@ class Course extends React.Component{
         super(props);
         this.state={
             indice: 1,
-            style:[
-                {
-                  left: '-100'  
-                }
-            ]
+            style: "myStyle"
         };
         this.nextSlide = this.nextSlide.bind(this);
         this.prevSlide = this.prevSlide.bind(this);
@@ -36,13 +32,19 @@ class Course extends React.Component{
     }
 
     render(){
+        let myStyle = {};
+        if(this.state.indice === 1){
+            myStyle = {
+                left: '-700px'
+            }
+        }
         return(
             <section id="cursos" className="course">
                 <div className="title-special">
                     <hr className="line-course l-left" /><h3>cursos</h3><hr className="line-course l-right" /> 
                 </div>
                 <div  className="course__container">
-                    <div style={this.state.style.left} className="course__container--details">
+                    <div style={myStyle} className="course__container--details">
                         {this.props.children}
                     </div>
                     <div className="direction">

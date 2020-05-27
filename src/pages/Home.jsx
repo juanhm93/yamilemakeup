@@ -53,7 +53,7 @@ class Home extends React.Component{
             <Biography/>
             <Course>
                 {this.state.data.map(character => (
-                    <CourseItem key={character.id}{...character} />
+                    <CourseItem key={character.ref}{...character} />
                 ))}
             </Course>
             </>
