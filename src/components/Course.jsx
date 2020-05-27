@@ -1,72 +1,86 @@
 import React from 'react';
 import './styles/Course.css';
 import './styles/Lines.css';
+
+import CourseItem from './CourseItem';
 // import automaquillajeExpress from '../assets/static/automaquillaje-express.jpg';
 // import automaquillajeEstilismo from '../assets/static/automaquillaje-y-estilismo.jpg';
 // import automaquillajeTexas from '../assets/static/automaquillaje-texas.jpg';
 
-class Course extends React.Component{
-    constructor(props){
+class Course extends React.Component {
+    constructor(props) {
         super(props);
-        this.state={
+
+        this.constant = 0;
+        this.state = {
             indice: 1,
-            style: "myStyle"
+            style: "myStyle",
+            leftPosition: 700
         };
         this.nextSlide = this.nextSlide.bind(this);
         this.prevSlide = this.prevSlide.bind(this);
     }
 
-    nextSlide(){
-        console.log("next1 "+this.state.indice); 
-        this.setState((state) => ({
-            indice: this.state.indice + 1
-        }));
-        console.log("next2 "+this.state.indice); 
-    
-    }
-    prevSlide(){
-        this.setState((state) => ({
-            indice: this.state.indice - 1
-        }));
-        console.log("prev "+this.state.indice);      
+    componentDidMount() {
+        //[this.constant] i'm not using state here because this var doesn't make a build rebuild is just a const
+        this.constant = this.container.children['0'].clientWidth;
+        // [this.mainContainer.clientWidth] main content with if you want to know how many elements you have inside
+        // console.log(this.mainContainer.clientWidth);
+
+        this.setState({
+            leftPosition: this.constant / 2
+        });
+
+        // here you could add resize event listener to change the constant value when the user resize the screen
     }
 
-    render(){
+    nextSlide() {
+        // [this.container.children['0'].clientWidth] first child width use it to know how much you should translate
+        console.log('this.container ', this.container.children['0'].clientWidth);
+        // [this.container.clientWidth] is the container width it could change if you add or substract
+        console.log('this.container ', this.container.clientWidth);
+        // [this.props.list.length] total elements you have 
+        console.log('this.container ', this.props.list.length);
 
-    // hecho a lo bruto obviamente no validado y como lo tenian en un principio
-        let myStyle = {};
-        if(this.state.indice === 1){
-            myStyle = {
-                left: '-700px'
-            }
-        }else{
-            if(this.state.indice > 1){
-                myStyle = {
-                    left: '-1250px'
-                }
-            }else{
-                if(this.state.indice < 1 ){
-                    myStyle = {
-                        left: '-150px'
-                    }
-                }
-            }
+        console.log("next1 " + this.state.indice);
+        if (this.state.indice < this.props.list.length) {
+            this.setState(({ indice, leftPosition }) => ({
+                indice: indice + 1,
+                leftPosition: leftPosition + (indice * this.constant)
+            }));
         }
-        return(
+
+    }
+    prevSlide() {
+        this.setState(({ indice }) => ({
+            indice: indice - 1
+        }));
+        console.log("prev " + this.state.indice);
+    }
+
+    render() {
+        const { leftPosition } = this.state;
+        // hecho a lo bruto obviamente no validado y como lo tenian en un principio
+        let myStyle = { left: `-${leftPosition}px` };
+        return (
             <section id="cursos" className="course">
                 <div className="title-special">
-                    <hr className="line-course l-left" /><h3>cursos</h3><hr className="line-course l-right" /> 
+                    <hr className="line-course l-left" /><h3>cursos</h3><hr className="line-course l-right" />
                 </div>
-                <div  className="course__container">
-                    <div style={myStyle} className="course__container--details">
-                        {this.props.children}
+                <div ref={el => this.mainContainer = el} className="course__container">
+                    <div style={myStyle} ref={(item) => this.container = item} className="course__container--details">
+                        {
+                            this.props.list && this.props.list.map(character => (
+                                <CourseItem key={character.id} {...character} />
+                            ))
+                        }
                     </div>
                     <div className="direction">
-                        <button  id="prev" className="prev" onClick={this.prevSlide}>&#10094;</button>
-                        <button  id="next" className="next" onClick={this.nextSlide}>&#10095;</button>
+                        <button id="prev" className="prev" onClick={this.prevSlide}>&#10094;</button>
+                        <button id="next" className="next" onClick={this.nextSlide}>&#10095;</button>
                     </div>
                 </div>
-            </section>    
+            </section>
 
         );
     }
