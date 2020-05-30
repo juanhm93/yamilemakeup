@@ -10,7 +10,7 @@ class Navbar extends React.Component {
                             <Link className="active" to="/">bio</Link>
                         </li>
                          <li>
-                            <Link to="/portafolio">portafolio</Link>
+                            <Link to="#portafolio">portafolio</Link>
                         </li>
                          <li>
                              <Link to="#">cursos</Link>

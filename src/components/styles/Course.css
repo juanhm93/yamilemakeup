@@ -28,7 +28,6 @@
     overflow: hidden;
     position: relative;
     box-sizing: border-box;
-    border: 1px dashed red;
     display: flex;
     margin-bottom: 100px;
 }
@@ -46,6 +45,10 @@
     max-height: 500px;
     display: inline-block;
     margin-left: 150px;
+}
+.course__container--img button{
+    background-color: inherit;
+    border: none;
 }
 .course__container--img p{
     text-align: center;
@@ -88,7 +91,13 @@ button:focus{
 .img-course{
     max-width: 400px;
     max-height: 400px;
+    transition: transform .4s;
+    cursor: pointer;
 }
+.img-course:hover{
+    transform: scale(1.1);
+}
+
 .img-first{
     margin-left: 0px;
 }

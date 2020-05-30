@@ -28,7 +28,7 @@ class Course extends React.Component {
         // console.log(this.mainContainer.clientWidth);
 
         this.setState({
-            leftPosition: this.constant / 2
+            leftPosition: this.constant - (this.constant / 3)
         });
 
         // here you could add resize event listener to change the constant value when the user resize the screen
