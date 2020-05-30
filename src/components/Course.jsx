@@ -36,50 +36,43 @@ class Course extends React.Component {
 
     moveSlide(direction) {
         // [this.container.children['0'].clientWidth] first child width use it to know how much you should translate
-        console.log('this.container ', this.container.children['0'].clientWidth);
+        // console.log('this.container ', this.container.children['0'].clientWidth);
         // [this.container.clientWidth] is the container width it could change if you add or substract
-        console.log('this.container ', this.container.clientWidth);
+        // console.log('this.container ', this.container.clientWidth);
         // [this.props.list.length] total elements you have 
-        console.log('this.container ', this.props.list.length);
-        
-        console.log("next1 " + this.state.indice);
-        console.log("position " + this.state.leftPosition);
-        console.log("constante " + this.constant);
-        
-        if(direction === 'next'){
-            
-            if (this.state.indice < this.props.list.length) {
+        // console.log('this.container ', this.props.list.length);
+
+        if (direction === 'next') {
+            console.log(direction);
+
+            if (this.state.indice < this.props.list.length - 1) {
                 this.setState(({ indice, leftPosition }) => ({
                     indice: indice + 1,
-                    leftPosition: leftPosition + (indice * this.constant)
+                    leftPosition: leftPosition + ((indice + 1) * this.constant)
                 }));
             }
-        }else{
-            if(direction === 'prev'){
-                if(this.state.indice > 0 ){
-                    this.setState(({ indice,leftPosition }) => ({
-                        indice: indice - 1,
-                        leftPosition: leftPosition - (indice * this.constant)
-                    }));
-                }
+        } else if (direction === 'prev' && this.state.indice >= 1) {
+            console.log(direction);
+            if (this.state.indice > 0) {
+                this.setState(({ indice, leftPosition }) => ({
+                    indice: indice - 1,
+                    leftPosition: leftPosition - (indice * this.constant)
+                }));
             }
-            
         }
-        // prevSlide() {
-    //     console.log("prev " + this.state.indice);
-    //     console.log("left position "+this.state.leftPosition);
-    //     }
+
     }
 
     render() {
         const { leftPosition } = this.state;
         // hecho a lo bruto obviamente no validado y como lo tenian en un principio
-        let myStyle = { left: `-${leftPosition}px` };
+        let myStyle = { left: `${-1 * leftPosition}px` };
         return (
             <section id="cursos" className="course">
                 <div className="title-special">
                     <hr className="line-course l-left" /><h3>cursos</h3><hr className="line-course l-right" />
                 </div>
+
                 <div ref={el => this.mainContainer = el} className="course__container">
                     <div style={myStyle} ref={(item) => this.container = item} className="course__container--details">
                         {
@@ -93,6 +86,7 @@ class Course extends React.Component {
                         <button id="next" className="next" onClick={() => this.moveSlide("next")}>&#10095;</button>
                     </div>
                 </div>
+
             </section>
 
         );
