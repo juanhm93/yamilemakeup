@@ -1,15 +1,39 @@
 import React from 'react';
+import Popup from './Popup';
 
-const CourseItem = ({imgCourse,name}) => {
+class CourseItem extends React.Component {
 
-            const alertaRoja = () => {
-                window.alert("pega la info");
-            }
-   
-    return  <div className="course__container--img">
-                <button onClick={alertaRoja}><img className="img-course"  src={imgCourse} alt="" /></button>
-                <p>{name}</p>
+         constructor(props){
+            super(props);
+            this.state = {
+                showPopup: false
+            };
+            this.togglePopup = this.togglePopup.bind(this);
+         }   
+
+         togglePopup(){
+             this.setState({
+                 showPopup: !this.state.showPopup
+             });
+         }
+
+   render(){
+
+    return (
+    <div className="course__container--img">
+                <button onClick={this.togglePopup}><img className="img-course"  src={this.props.imgCourse} alt="" /></button>
+                <p>{this.props.name}</p>
+            {this.state.showPopup ?  
+        <Popup  
+            show={this.state.showPopup}
+          text={this.props.name}  
+          closePopup={this.togglePopup.bind(this)}  
+        />  
+        : null  
+        }  
             </div>
+    ); 
+   }
 }
 
 
