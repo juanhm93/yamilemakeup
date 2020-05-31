@@ -34,9 +34,30 @@ class Home extends React.Component {
           id: 1,
           title: 'Juego de Brochas Salam',
           code: 'BLACK - Musu Cosmetic -3305/052',
-          description1: 'Salam es el saludo isl&aacute;mico y significa paz. <br/> Las brochas del maquillador son el primer contacto que tiene el cliente con el maquillaje. Son el primer encuentro. Y esto explica por qu&eacute; son tan importantes',
-          description2: 'El set de brochas "Salam" cuenta con 25 piezas indispensables tanto pra quien apenas comienza a dar sus primeros pasos como para los m&aacute;s experimentados.',
-          thumbnails: '',
+          description1: 'Salam es el saludo isl&aacute;mico y significa paz.',
+          description2: 'Las brochas del maquillador son el primer contacto que tiene el cliente con el maquillaje. Son el primer encuentro. Y esto explica por qu&eacute; son tan importantes',
+          description3: 'El set de brochas "Salam" cuenta con 25 piezas indispensables tanto pra quien apenas comienza a dar sus primeros pasos como para los m&aacute;s experimentados.',
+          thumbnails: 'images/Salambrushset.png',
+          image: ''
+        },
+        {
+          id: 2,
+          title: 'Otro titulo diferente',
+          code: 'WHITE - cambiado',
+          description1: 'Salam es el saludo isl&aacute;mico y significa paz.',
+          description2: 'Las brochas del maquillador son el primer contacto que tiene el cliente con el maquillaje. Son el primer encuentro. Y esto explica por qu&eacute; son tan importantes',
+          description3: 'El set de brochas "Salam" cuenta con 25 piezas indispensables tanto pra quien apenas comienza a dar sus primeros pasos como para los m&aacute;s experimentados.',
+          thumbnails: 'images/musucosmeticsdelineadorlnavaja.jpg',
+          image: ''
+        },
+        {
+          id: 3,
+          title: 'Mas valores agregados',
+          code: 'WHITE - cambiado',
+          description1: 'Salam es el saludo isl&aacute;mico y significa paz.',
+          description2: 'Las brochas del maquillador son el primer contacto que tiene el cliente con el maquillaje. Son el primer encuentro. Y esto explica por qu&eacute; son tan importantes',
+          description3: 'El set de brochas "Salam" cuenta con 25 piezas indispensables tanto pra quien apenas comienza a dar sus primeros pasos como para los m&aacute;s experimentados.',
+          thumbnails: 'images/musu cosmetics pomadas cejaseyebrows.jpg',
           image: ''
         }
       ]
@@ -65,7 +86,7 @@ class Home extends React.Component {
         <Frontcover />
         <Biography />
         <Course list={data} />
-        <Store />
+        <Store listImg={dataStore} />
       </>
     )
   }

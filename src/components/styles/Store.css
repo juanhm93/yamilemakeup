@@ -43,15 +43,24 @@
 }
 .select-products-store{
     width: 300px;
+    border: 1px dotted blue;
+}
+.select-products-store__thumbnails{
+    width: 300px;
     display: flex;
     flex-direction: column;
 }
-.select-products-store img{
+.select-products-store__thumbnails button{
+    border: none;
+    background: white;
+}
+.select-products-store__thumbnails button img{
     width: 240px;
     height: 181px;
     border: 1px solid black;
     margin-bottom: 30px;
 }
+
 .store-img{
     padding-left: 50px;
     display: flex;
