@@ -1,18 +1,72 @@
 import React from 'react';
 import './styles/Store.css';
-import StoreItemsThumbnails from './StoreItemsThumbnails';
 import StoreItemDescription from './StoreItemDescription';
-
 
 class Store extends React.Component{
     constructor(props){
         super(props)
         this.state = {
-            image: ''
-        }
+            dataStore: [
+                {
+                  id: 4,
+                  title: 'Juego de Brochas Salam',
+                  code: 'BLACK - Musu Cosmetic -3305/052',
+                  description1: 'Salam es el saludo isl&aacute;mico y significa paz.',
+                  description2: 'Las brochas del maquillador son el primer contacto que tiene el cliente con el maquillaje. Son el primer encuentro. Y esto explica por qu&eacute; son tan importantes',
+                  description3: 'El set de brochas "Salam" cuenta con 25 piezas indispensables tanto pra quien apenas comienza a dar sus primeros pasos como para los m&aacute;s experimentados.',
+                  thumbnails: 'images/Salambrushset.png',
+                  image: 'images/Salambrushset.png',
+                  selection: true,
+                  clase: 'selected-product'
+                },
+                {
+                  id: 5,
+                  title: 'Otro titulo diferente',
+                  code: 'WHITE - cambiado',
+                  description1: 'Salam es el saludo isl&aacute;mico y significa paz.',
+                  description2: 'Las brochas del maquillador son el primer contacto que tiene el cliente con el maquillaje. Son el primer encuentro. Y esto explica por qu&eacute; son tan importantes',
+                  description3: 'El set de brochas "Salam" cuenta con 25 piezas indispensables tanto pra quien apenas comienza a dar sus primeros pasos como para los m&aacute;s experimentados.',
+                  thumbnails: 'images/musucosmeticsdelineadorlnavaja.jpg',
+                  image: '',
+                  selection: false,
+                  clase: ''
+                },
+                {
+                  id: 6,
+                  title: 'Mas valores agregados',
+                  code: 'WHITE - cambiado',
+                  description1: 'Salam es el saludo isl&aacute;mico y significa paz.',
+                  description2: 'Las brochas del maquillador son el primer contacto que tiene el cliente con el maquillaje. Son el primer encuentro. Y esto explica por qu&eacute; son tan importantes',
+                  description3: 'El set de brochas "Salam" cuenta con 25 piezas indispensables tanto pra quien apenas comienza a dar sus primeros pasos como para los m&aacute;s experimentados.',
+                  thumbnails: 'images/musu cosmetics pomadas cejaseyebrows.jpg',
+                  image: '',
+                  selection: false,
+                  clase: ''
+                }
+              ]
+        };
+
+        this.handleClick = this.handleClick.bind(this);
+
+    }
+
+    handleClick(item) {
+
+        this.setState(item => ({
+            dataStore: [    
+                {
+                    selection: !item.selection,
+                    clase: 'selected-product'
+                }
+            ]
+        }));
     }
 
     render(){
+        // const thumbnails = {backgroundColor: "#d8d8d8"}
+        const {dataStore} = this.state;  
+        const textData = dataStore.filter(selected => selected.selection);
+
         return(
             <section id="tienda" className="store">
             <div className="title-special">
@@ -21,24 +75,30 @@ class Store extends React.Component{
             <div className="detail-store">
             <div className="description-product-store" >
                 {
-                    this.props.listImg && this.props.listImg.map(character => (
-                        <StoreItemDescription key={character.id}{...character}/>
+                    textData && textData.map(selected => (
+                        <StoreItemDescription key={selected.selection} {...selected}/>
                     )) 
                 }
             </div>
-                <div className="store-img">
+                {/* <div className="store-img"> */}
                     <div className="select-products-store">
-                        <div className="select-products-store__thumbnails">
-                        {this.props.listImg && this.props.listImg.map(character => (
-                            <StoreItemsThumbnails key={character.id}{...character} />
+                        <div  className="select-products-store__thumbnails">
+                        {this.state.dataStore && this.state.dataStore
+                        .map(item => (
+                                
+                                 <button onClick={()=> this.handleClick(item)} key={item.ref} ><img className={item.clase} src={item.thumbnails} alt="" /> </button> 
                         ))
                         }
                         </div>
                     </div>
                     <div className="product-store">
-                        <img src="image/Salam brush set.png" alt="" />
+                        {
+                            textData && textData.map(selected => (
+                                <img key={selected.ref} src={selected.image} alt="" />
+                            ))
+                        }
                     </div>
-                </div>
+                {/* </div> */}
             </div>
         </section>
         )

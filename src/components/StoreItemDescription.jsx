@@ -1,16 +1,22 @@
 import React from 'react';
 
-const StoreItemDescription = (props) => (
-    <>
-    <h2> title</h2>
-                    <p className="product-code"> code</p>
-                    <div/>
-                    <p className="special-p"> description1.</p>
-                    <p> description2</p>
-                    <p> description3</p>
-                         {/* <a href="#">Leer M&aacute;s</a> */}
-                    {/* <a className="link" href="#">comprar</a> */}
-</>
-);
+class StoreItemDescription extends React.Component {
+     
+     render(){
+          return(
+     
+         <>
+         <h2>{this.props.title}</h2>
+                         <p className="product-code">{this.props.code}</p>
+                         <div/>
+                         <p className="special-p">{this.props.description1}</p>
+                         <p> {this.props.description2}</p>
+                         <p> {this.props.description3} </p>
+                              {/* <a href="#">Leer M&aacute;s</a> */}
+                         {/* <a className="link" href="#">comprar</a> */}
+          </>
+          )
+     }
+}
 
 export default StoreItemDescription;

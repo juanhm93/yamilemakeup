@@ -5,7 +5,6 @@ import Biography from '../components/Biography';
 import Course from '../components/Course';
 import Store from '../components/Store';
 
-
 class Home extends React.Component {
 
   constructor(props) {
@@ -31,7 +30,7 @@ class Home extends React.Component {
       ],
       dataStore: [
         {
-          id: 1,
+          id: 4,
           title: 'Juego de Brochas Salam',
           code: 'BLACK - Musu Cosmetic -3305/052',
           description1: 'Salam es el saludo isl&aacute;mico y significa paz.',
@@ -41,7 +40,7 @@ class Home extends React.Component {
           image: ''
         },
         {
-          id: 2,
+          id: 5,
           title: 'Otro titulo diferente',
           code: 'WHITE - cambiado',
           description1: 'Salam es el saludo isl&aacute;mico y significa paz.',
@@ -51,7 +50,7 @@ class Home extends React.Component {
           image: ''
         },
         {
-          id: 3,
+          id: 6,
           title: 'Mas valores agregados',
           code: 'WHITE - cambiado',
           description1: 'Salam es el saludo isl&aacute;mico y significa paz.',
