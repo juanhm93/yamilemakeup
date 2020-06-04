@@ -14,7 +14,6 @@ class Store extends React.Component{
                   description1: 'Salam es el saludo isl&aacute;mico y significa paz.',
                   description2: 'Las brochas del maquillador son el primer contacto que tiene el cliente con el maquillaje. Son el primer encuentro. Y esto explica por qu&eacute; son tan importantes',
                   description3: 'El set de brochas "Salam" cuenta con 25 piezas indispensables tanto pra quien apenas comienza a dar sus primeros pasos como para los m&aacute;s experimentados.',
-                  thumbnails: 'images/Salambrushset.png',
                   image: 'images/Salambrushset.png',
                   selection: true,
                   clase: 'selected-product'
@@ -26,8 +25,7 @@ class Store extends React.Component{
                   description1: 'Salam es el saludo isl&aacute;mico y significa paz.',
                   description2: 'Las brochas del maquillador son el primer contacto que tiene el cliente con el maquillaje. Son el primer encuentro. Y esto explica por qu&eacute; son tan importantes',
                   description3: 'El set de brochas "Salam" cuenta con 25 piezas indispensables tanto pra quien apenas comienza a dar sus primeros pasos como para los m&aacute;s experimentados.',
-                  thumbnails: 'images/musucosmeticsdelineadorlnavaja.jpg',
-                  image: '',
+                  image: 'images/musucosmeticsdelineadorlnavaja.jpg',
                   selection: false,
                   clase: ''
                 },
@@ -38,8 +36,7 @@ class Store extends React.Component{
                   description1: 'Salam es el saludo isl&aacute;mico y significa paz.',
                   description2: 'Las brochas del maquillador son el primer contacto que tiene el cliente con el maquillaje. Son el primer encuentro. Y esto explica por qu&eacute; son tan importantes',
                   description3: 'El set de brochas "Salam" cuenta con 25 piezas indispensables tanto pra quien apenas comienza a dar sus primeros pasos como para los m&aacute;s experimentados.',
-                  thumbnails: 'images/musu cosmetics pomadas cejaseyebrows.jpg',
-                  image: '',
+                  image: 'images/musu cosmetics pomadas cejaseyebrows.jpg',
                   selection: false,
                   clase: ''
                 }
@@ -55,6 +52,11 @@ class Store extends React.Component{
         this.setState(item => ({
             dataStore: [    
                 {
+                    id: item.id,
+                    code: item.code,
+                    description1: item.description1,
+                    description2: item.description2,
+                    description3: item.description3,
                     selection: !item.selection,
                     clase: 'selected-product'
                 }
@@ -86,7 +88,7 @@ class Store extends React.Component{
                         {this.state.dataStore && this.state.dataStore
                         .map(item => (
                                 
-                                 <button onClick={()=> this.handleClick(item)} key={item.ref} ><img className={item.clase} src={item.thumbnails} alt="" /> </button> 
+                                 <button onClick={()=> this.handleClick(item)} key={item.ref} ><img className={item.clase} src={item.image} alt="" /> </button> 
                         ))
                         }
                         </div>
