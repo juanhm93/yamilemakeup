@@ -5,7 +5,11 @@ import StoreItemDescription from './StoreItemDescription';
 class Store extends React.Component {
     constructor(props) {
         super(props)
+
+        this.constant = 0;
         this.state = {
+            indice: 1,
+            topPosition: 100,
             dataStore: [
                 {
                     id: 4,
@@ -47,7 +51,17 @@ class Store extends React.Component {
         };
 
         this.handleClick = this.handleClick.bind(this);
+        this.moveSlideVertical = this.moveSlideVertical.bind(this);
+    }
 
+    componentDidMount(){
+        this.constant = this.container.children['0'].clientHeight;
+        // [this.mainContainer.clientWidth] main content with if you want to know how many elements you have inside
+        // console.log(this.mainContainer.clientWidth);
+        console.log(this.constant);
+        this.setState({
+            topPosition:  this.constant * (-1/3)
+        });
     }
 
     handleClick(item) {
@@ -64,9 +78,34 @@ class Store extends React.Component {
         }));
     }
 
+
+    moveSlideVertical(direction) {
+        if (direction === 'next') {
+            console.log(direction);
+
+            if (this.state.indice < this.state.dataStore.length - 1) {
+                this.setState(({ indice, topPosition }) => ({
+                    indice: indice + 1,
+                    topPosition: topPosition + ((indice + 1) * this.constant)
+                }));
+            }
+        } else if (direction === 'prev' && this.state.indice >= 1) {
+            console.log(direction);
+            if (this.state.indice > 0) {
+                this.setState(({ indice, topPosition }) => ({
+                    indice: indice - 1,
+                    topPosition: topPosition - (indice * this.constant)
+                }));
+            }
+        }
+    }
+
     render() {
         // const thumbnails = {backgroundColor: "#d8d8d8"}
+        const {topPosition} = this.state;
         const { dataStore } = this.state;
+
+        let myStyle = {top: `${-1 * topPosition}px`};
         // el metodo find devuelve el primer dato en el arreglo que cumpla con la funcion que se le pase como parametro
         // en este caso seleccion sea igual a true
         const toShow = dataStore.find(el => el.selection) || null;
@@ -83,8 +122,8 @@ class Store extends React.Component {
                         }
                     </div>
                     {/* <div className="store-img"> */}
-                    <div className="select-products-store">
-                        <div className="select-products-store__thumbnails">
+                    <div ref={el => this.mainContainer = el} className="select-products-store">
+                        <div style={myStyle} ref={(item) => this.container = item} className="select-products-store__thumbnails">
                             {this.state.dataStore && this.state.dataStore
                                 .map(item => (
                                     <img onClick={() => this.handleClick(item)} key={item.id} className={item.clase} src={item.thumbnails} alt={`${item.selection}`} />
@@ -92,8 +131,8 @@ class Store extends React.Component {
                             }
                         </div>
                         <div className="direction-vertical">
-                        <button id="prev" className="prev-v" onClick={() => this.moveSlide("prev")}>&#10094;</button>
-                        <button id="next" className="next-v" onClick={() => this.moveSlide("next")}>&#10095;</button>
+                        <button id="prev-v" className="prev-v" onClick={() => this.moveSlideVertical("prev")}>&#10094;</button>
+                        <button id="next-v" className="next-v" onClick={() => this.moveSlideVertical("next")}>&#10095;</button>
                         </div>
                     </div>
                     <div className="product-store">

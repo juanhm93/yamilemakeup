@@ -3,7 +3,7 @@
 }
 .detail-store{
     display: flex;
-    padding: 50px 10px 50px 80px;
+    padding: 0px 10px 50px 80px;
     justify-content: space-around;
 }
 .title-special h3{
@@ -14,6 +14,7 @@
 .description-product-store{
     width: 30%;
     max-width: 400px;
+    padding-top: 47px;
 }
 .description-product-store h2{
     color: #0f0e14;
@@ -44,15 +45,19 @@
     margin-bottom: 0px !important;
 }
 .select-products-store{
-    width: 225px;
+    width: 190px;
+    height: 550px;
     border: 1px dotted blue;
     position: relative;
+    overflow-y: scroll;
+    overflow: hidden;
 }
 .select-products-store__thumbnails{
-    width: 220px;
+    width: 185px;
     display: flex;
     flex-direction: column;
     position: absolute;
+    transition: all .6s linear;
     top: 50px;
     left: 0;
     border: 2px dotted green;
@@ -63,8 +68,8 @@
    
 } */
 .select-products-store__thumbnails img{
-    width: 200px;
-    height: 141px;
+    width: 180px;
+    height: 121px;
     border: 1px solid black;
     margin-bottom: 30px;
     cursor: pointer;
@@ -79,6 +84,7 @@
     justify-content: space-between;
 }
 .product-store{
+    margin-top: 47px;
     padding: 50px 0px;
     max-width: 445px;
     height: 708px;
@@ -101,7 +107,7 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    /* flex: 1; */
+    flex: 1;
 }
 .direction-vertical button{
     color:#fff;
@@ -119,7 +125,6 @@
 .direction-vertical button:hover{
     color:#000;
     background-color: #fff;
-    border: 1px solid #C2C2C2;
     
 }
 
@@ -127,7 +132,7 @@
     align-self: center;
 }
 .next-v{
-   margin-top: 550px;
+   margin-top: 480px;
 
 }
 
