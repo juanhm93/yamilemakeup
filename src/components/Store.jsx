@@ -73,7 +73,7 @@ class Store extends React.Component {
         return (
             <section id="tienda" className="store">
                 <div className="title-special">
-                    {toShow.id}
+                    {/* {toShow.id} */}
                     <hr className="line-course l-left" /><h3>TIENDA</h3><hr className="line-course l-right" />
                 </div>
                 <div className="detail-store">
