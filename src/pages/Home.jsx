@@ -48,11 +48,11 @@ class Home extends React.Component {
     const { data } = this.state;
     return (
       <>
-        {/* <Header /> */}
-        {/* <Frontcover /> */}
+        {/* <Header />
+        <Frontcover />
         <Biography />
-        {/* <Course list={data} /> */}
-        {/* <Store/> */}
+        <Course list={data} /> */}
+        <Store/>
       </>
     )
   }

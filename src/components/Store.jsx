@@ -87,9 +87,13 @@ class Store extends React.Component {
                         <div className="select-products-store__thumbnails">
                             {this.state.dataStore && this.state.dataStore
                                 .map(item => (
-                                    <button onClick={() => this.handleClick(item)} key={item.id} ><img className={item.clase} src={item.thumbnails} alt={`${item.selection}`} /> </button>
+                                    <img onClick={() => this.handleClick(item)} key={item.id} className={item.clase} src={item.thumbnails} alt={`${item.selection}`} />
                                 ))
                             }
+                        </div>
+                        <div className="direction-vertical">
+                        <button id="prev" className="prev-v" onClick={() => this.moveSlide("prev")}>&#10094;</button>
+                        <button id="next" className="next-v" onClick={() => this.moveSlide("next")}>&#10095;</button>
                         </div>
                     </div>
                     <div className="product-store">

@@ -1,5 +1,6 @@
 /* SECCION BIOGRAFIA */
 .biography{
+    max-width: 1250px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -59,10 +60,11 @@
 }
 .ceo-image img{
     padding-top:120px;
-    margin-right: -12px;
+    /* margin-right: -12px; */
     max-width: 450px;
     max-height: 520px;
     object-fit: cover;
+    /* object-position: 50% 50%; */
 }
 .ceo-image p{
     padding-left: 190px;

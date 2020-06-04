@@ -46,23 +46,28 @@
 .select-products-store{
     width: 225px;
     border: 1px dotted blue;
+    position: relative;
 }
 .select-products-store__thumbnails{
     width: 220px;
     display: flex;
     flex-direction: column;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    border: 2px dotted green;
 }
-.select-products-store__thumbnails button{
+/* .select-products-store__thumbnails button{
     border: none;
     background: white;
-    cursor: pointer;
-}
-.select-products-store__thumbnails button img{
+   
+} */
+.select-products-store__thumbnails img{
     width: 200px;
     height: 141px;
     border: 1px solid black;
     margin-bottom: 30px;
-    
+    cursor: pointer;
 }
 .selected-product{
     background-color: #d8d8d8;
@@ -89,3 +94,40 @@
     max-height: inherit;
     object-fit: cover;
 }
+
+.direction-vertical{
+    display: flex;
+    /* flex-wrap: wrap; */
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    /* flex: 1; */
+}
+.direction-vertical button{
+    color:#fff;
+    width: 30px;
+    height: 30px;
+    font-size: 10px;
+    background-color: black;
+    border: 1px solid #C2C2C2;
+    border-radius: 100%;
+    cursor: pointer;
+    z-index: 3;
+    transform: rotate(90deg);
+    padding-bottom: 4px;
+}
+.direction-vertical button:hover{
+    color:#000;
+    background-color: #fff;
+    border: 1px solid #C2C2C2;
+    
+}
+
+.prev-v{
+    align-self: center;
+}
+.next-v{
+   margin-top: 550px;
+
+}
+
