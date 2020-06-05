@@ -4,6 +4,9 @@ import Frontcover from '../components/Frontcover';
 import Biography from '../components/Biography';
 import Course from '../components/Course';
 import Store from '../components/Store';
+import Contact from '../components/Contact';
+import ButtonScroll from '../components/ButtonScroll';
+import Footer from '../components/Footer';
 
 class Home extends React.Component {
 
@@ -48,11 +51,14 @@ class Home extends React.Component {
     const { data } = this.state;
     return (
       <>
-        {/* <Header />
+        <Header />
         <Frontcover />
         <Biography />
-        <Course list={data} /> */}
+        <Course list={data} />
         <Store/>
+        <Contact/>
+        <ButtonScroll/>
+        <Footer/>
       </>
     )
   }
