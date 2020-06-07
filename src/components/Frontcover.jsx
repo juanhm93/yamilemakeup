@@ -20,9 +20,9 @@ const Frontcover = () => (
         </article>
         <article className="front-cover-social-networks">
             <ul>
-                <li><a  className="networks" href=""><img src={facebook} alt="" /> <p>facebook.com/yamilemakeup</p></a></li>
-                <li><a className="networks" href=""><img src={instagram} alt="" /><p>@yamilemakeup</p> </a></li>
-                <li><a className="networks" href=""> <img src={youtube} alt="" /><p>Yamile Makeup</p> </a></li>
+                <li><a  className="networks" href="https://www.facebook.com/Yamilemakeup/" target="_blank"><img src={facebook} alt="" /> <p>facebook.com/yamilemakeup</p></a></li>
+                <li><a className="networks" href="https://www.instagram.com/yamilemakeup/?igshid=elzox8dm8nf4" target="_blank"><img src={instagram} alt="" /><p>@yamilemakeup</p> </a></li>
+                <li><a className="networks" href="https://www.youtube.com/channel/UCk0pDqKt8hNJmb0Rpa8r_6g" target="_blank"> <img src={youtube} alt="" /><p>Yamile Makeup</p> </a></li>
             </ul>
         </article>
     </div>
