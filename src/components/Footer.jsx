@@ -12,23 +12,23 @@ class Footer extends React.Component{
                     items: [
                         {
                            item: 'Bio',
-                           reference: 'https://google.com'
+                           reference: 'portada'
                         },
                         {
                            item: 'Portafolio',
-                           reference: 'https://google.com'
+                           reference: 'biografia'
                         },
                         {
                            item: 'Cursos',
-                           reference: 'https://google.com'
+                           reference: 'cursos'
                         },
                         {
                            item: 'Tienda',
-                           reference: 'https://google.com'
+                           reference: 'tienda'
                         },
                         {
                            item: 'Contacto',
-                           reference: 'https://google.com'
+                           reference: 'contacto'
                         }
                     ]
         }
@@ -40,7 +40,7 @@ class Footer extends React.Component{
             items: [
                 {
                    item: 'Musuteam',
-                   reference: 'https://google.com'
+                   reference: 'https://www.lamusu.com/musu-team'
                 }
             ]
         }
@@ -51,15 +51,15 @@ class Footer extends React.Component{
             items: [
                 {
                    item: 'Instagram',
-                   reference: 'https://instagram.com'
+                   reference: 'https://www.instagram.com/yamilemakeup/?igshid=elzox8dm8nf4'
                 },
                 {
                    item: 'Facebook',
-                   reference: 'https://facebook.com'
+                   reference: 'https://www.facebook.com/Yamilemakeup/'
                 },
                 {
                    item: 'Youtube',
-                   reference: 'https://youtube.com'
+                   reference: ' https://www.youtube.com/channel/UCk0pDqKt8hNJmb0Rpa8r_6g'
                 }
 
             ]
