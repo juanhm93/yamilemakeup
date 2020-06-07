@@ -25,7 +25,7 @@
     color: #8f8b87;
     text-decoration: none;
     font-size: inherit;
-
+    cursor: pointer;
 }
 .options-footer-container ul li {
     margin-bottom: 5px;
