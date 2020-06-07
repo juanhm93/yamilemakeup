@@ -1,6 +1,6 @@
 import React from 'react';
 // import {Link} from 'react-router-dom';
-import {Link, animateScroll as Scroll } from "react-scroll";
+import {Link } from "react-scroll";
 
 class Navbar extends React.Component {
     render(){
@@ -8,19 +8,19 @@ class Navbar extends React.Component {
             <nav>
                      <ul>
                          <li className="active">
-                            <Link className="active" to="/">bio</Link>
+                            <Link activeClass="active"  to="portada" spy={true} smooth={true} offset={-80} duration={500}>bio</Link>
                         </li>
                          <li>
-                            <Link to="#portafolio">portafolio</Link>
+                            <Link activeClass="active"  to="biografia" spy={true} smooth={true} offset={0} duration={500}>portafolio</Link>
                         </li>
                          <li>
-                             <Link to="#">cursos</Link>
+                             <Link activeClass="active"  to="cursos" spy={true} smooth={true} offset={0} duration={500}>cursos</Link>
                         </li>
                          <li>
-                             <Link to="#">tienda</Link>
+                             <Link activeClass="active"  to="tienda" spy={true} smooth={true} offset={0} duration={500}>tienda</Link>
                         </li>
                          <li>
-                             <Link to="#">contacto</Link>
+                             <Link activeClass="active"  to="contacto" spy={true} smooth={true} offset={0} duration={500}>contacto</Link>
                         </li>
                      </ul>
             </nav>
