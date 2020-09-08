@@ -4,7 +4,8 @@ import Frontcover from '../components/Frontcover';
 import Biography from '../components/Biography';
 import Course from '../components/Course';
 import CourseItem from '../components/CourseItem';
-
+import ProductService from '../service/product.service'
+import Product from '../models/product.model'
 
 class Home extends React.Component{
     
@@ -33,6 +34,27 @@ class Home extends React.Component{
           
           // this.nextSlide = this.nextSlide.bind(this);
           // this.showSlider = this.showSlider.bind(this);
+
+
+          var product = new Product(
+              ' ' , 
+              'testeando guardar con modelo' , 
+              'BLACK - Musu Cosmetic -3305/052' , 
+              [
+                'El set de brochas \"Salam\" cuenta con 25 piezas indispensables tanto pra quien apenas comienza a dar sus primeros pasos como para los m&aacute;s experimentados.'
+              ],
+              'modificacion.png'
+            
+            )
+          
+        //  llamada a la api
+        //  traer todos los productos
+          ProductService.getAll()
+          .then(
+            (data) => {
+              console.log(data)
+            }
+          )
 
               
     }
